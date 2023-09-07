@@ -1,26 +1,18 @@
-import os.path
-import torch.onnx
-from main import MobileNetClassifier
-import yaml
-import main
-
-def read_config_file(config_file_path):
-    with open(config_file_path, "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
-    return config
+from main import *
 
 config = read_config_file('config.yaml')
 pth_path = config['pth_path']
 split_result = pth_path.split("/")
 
-# Initialize your model and load its weights
 train_model = split_result[-1][:3]
 number_categories = config['number_categories']
 model = None
-if train_model == 'MBN':
-    model = main.MobileNetClassifier(number_categories)
-if train_model == 'RES':
-    model = main.ResnetClassifier(number_categories)
+if test_model == 'MBN':
+    model = MobileNetClassifier(number_categories)
+if test_model == 'RES':
+    model = ResnetClassifier(number_categories)
+if test_model == 'SFN':
+    model = ShuffleNetClassifier(number_categories)
 model.load_state_dict(torch.load(pth_path))
 model.eval()
 batch_size_onnx = config['batch_size_onnx']

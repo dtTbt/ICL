@@ -1,6 +1,6 @@
 #----------GENERAL----------#
 # 什么模式，'train' or 'test' or 'val'
-mode: 'detect'
+mode: 'train'
 # 训练，转化为onnx时更改类别数
 number_categories: 265
 

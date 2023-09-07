@@ -5,8 +5,8 @@ import cv2
 from model import *
 from utils import *
 from classify_utils import *
-ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 if __name__ == '__main__':
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -17,8 +17,10 @@ if __name__ == '__main__':
     detect_threshold = config['detect_threshold']
     number_categories = config['number_categories']
     class_name_file_path = config['classname_txt_path']
-    session = onnxruntime.InferenceSession(onnx_model_path, providers=
-    ['CUDAExecutionProvider'] if torch.cuda.is_available() else ['CPUExecutionProvider'])
+    session = onnxruntime.InferenceSession(
+        onnx_model_path,
+        providers=['CUDAExecutionProvider'] if torch.cuda.is_available() else ['CPUExecutionProvider']
+    )
 
     kind_dic = {"可回收物": "1", "厨余垃圾": "2", "有害垃圾": "3", "其他垃圾": "4"}
 
