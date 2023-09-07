@@ -1,0 +1,37 @@
+#----------GENERAL----------#
+# 什么模式，'train' or 'test' or 'val'
+mode: 'detect'
+# 训练，转化为onnx时更改类别数
+number_categories: 265
+
+#----------TRAIN----------#
+# 训练什么模型。'MBN' or 'RES' or 'SFN'
+train_model: 'MBN'
+# 数据集路径
+dataset_path: 'C:\Users\Lenovo\Desktop\data_265'
+# classname.txt文件路径
+classname_txt_path: 'classname.txt'
+# 训练的pth权重保存路径
+pth_save_folder: 'train_pth'
+# 批次大小(24G显存下，推荐MBN-260, RES-650, SFN-900)
+batch_size: 250
+# 训练轮数
+epochs: 50
+
+#----------DETECT----------#
+# detect时使用的onnx路径
+onnx_model_path: './MBN_77_bs3.onnx'
+# detect时更改阈值
+detect_threshold: 0.8
+
+#----------TEST----------#
+image_test: './images'
+pth_model_path: 'MBN_77.pth'
+
+#----------ONNX----------#
+# 待转化为onnx的pth权重路径
+pth_path: 'MBN_77.pth'
+# onnx模型的batch size(MBN推荐3)
+batch_size_onnx: 1
+# 保存onnx模型的路径
+onnx_folder_path: './'

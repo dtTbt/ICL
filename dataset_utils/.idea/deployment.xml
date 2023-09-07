@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="root@123.125.240.150:15093 password">
         <serverdata>
@@ -33,7 +33,7 @@
       <paths name="root@connect.neimeng.seetacloud.com:52595 password">
         <serverdata>
           <mappings>
-            <mapping deploy="/ICL" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -61,7 +61,7 @@
       <paths name="root@connect.westb.seetacloud.com:12843 password">
         <serverdata>
           <mappings>
-            <mapping deploy="/ICL" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -76,13 +76,6 @@
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="root@connect.westb.seetacloud.com:18503 password">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/ICL" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
@@ -178,6 +171,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
